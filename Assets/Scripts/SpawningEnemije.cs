@@ -13,7 +13,7 @@ public class SpawningEnemije : MonoBehaviour {
 	//[SerializeField] GameObject kmeticaPrefab;
 	List<Vector3> spawnPoints = new List<Vector3>();
 	[SerializeField] GameObject igralec;
-	private float SpawnTimer = 3.0f; //time to spawn enemies
+	private float SpawnTimer = 1.0f; //time to spawn enemies
 
 	// Use this for initialization
 	void Awake () {
