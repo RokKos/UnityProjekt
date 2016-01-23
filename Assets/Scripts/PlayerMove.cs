@@ -9,7 +9,7 @@ public class PlayerMove : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -17,5 +17,6 @@ public class PlayerMove : MonoBehaviour {
         Vector3 premik = igralec.transform.forward * CnInputManager.GetAxis("Vertical");
         premik+=igralec.transform.right * CnInputManager.GetAxis("Horizontal");
         igralec.transform.position = igralec.transform.position + premik;
+        if (CnInputManager.GetAxis("Vertical") != 0) Debug.Log("leva");
     }
 }

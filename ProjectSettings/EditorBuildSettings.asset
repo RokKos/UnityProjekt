@@ -9,5 +9,7 @@ EditorBuildSettings:
     path: Assets/main.unity
   - enabled: 0
     path: Assets/CNControls/Examples/Scenes/Third Person Controller.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/CNControls/Examples/Scenes/Third Person Controller.unity
+  - enabled: 1
+    path: Assets/borMain.unity
