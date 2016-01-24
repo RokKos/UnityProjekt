@@ -19,7 +19,7 @@ public class PlayerShoot : MonoBehaviour {
     RaycastHit targetHit; // A raycast hit to get information about what was hit.
     int shootableMask;// A layer mask so the raycast only hits things on the shootable layer.
     [SerializeField] GameObject scoreText;
-    [SerializeField] EnemyControl enemyControl;
+    [SerializeField] SpawningEnemije spawningEnemije;
 	
 	// Use this for initialization
 	void Start () {
@@ -54,7 +54,7 @@ public class PlayerShoot : MonoBehaviour {
 			//incresea score
 			scoreInt++;
 			//shorten time every time by 10%
-			enemyControl.timeAttack -= enemyControl.timeAttack * 0.1f;
+			spawningEnemije.SpawnTimer -= spawningEnemije.SpawnTimer * 0.1f;
 		}
 	}
 

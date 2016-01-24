@@ -10,7 +10,7 @@ public class EnemyControl: MonoBehaviour {
 	NavMeshAgent agent;
 	GameObject igralec; //for postion of player
 	private float angleOfDeath = 180.0f; //for what angle enemie rotate when dies
-	public float timeAttack = 2.0f;
+	private float timeAttack = 2.0f;
 	private float trenutniTime;
 	PlayerHealt playerHealt;
 	private bool uCanAttack = false;
