@@ -18,18 +18,6 @@ public class PlayerRotate : MonoBehaviour {
         float rotateY = CnInputManager.GetAxis("Horizontal") * playerRotateSpeed * Time.deltaTime;
         igralec.transform.Rotate(0, rotateY, 0, Space.World);
         cam.transform.Rotate(0, rotateY, 0, Space.World);
-        //Debug.Log(igralec.transform.forward.x.ToString() + igralec.transform.forward.z.ToString());
-
-        /*if (Input.GetKey(KeyCode.RightArrow))
-        {
-            cam.transform.Rotate(0, playerRotateSpeed  * Time.deltaTime, 0, Space.World);
-            igralec.transform.Rotate(0, playerRotateSpeed * Time.deltaTime, 0, Space.Self);
-        }
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            cam.transform.Rotate(0, -1 * playerRotateSpeed * Time.deltaTime, 0, Space.World);
-            igralec.transform.Rotate(0, -1 * playerRotateSpeed * Time.deltaTime, 0, Space.Self);
-        }*/
 
         //rotacija SAMO KAMERE gor-dol
         Vector3 rotationAngles;
@@ -38,6 +26,15 @@ public class PlayerRotate : MonoBehaviour {
         //rotationAngles.z = -1 * CnInputManager.GetAxis("Vertical") * igralec.transform.forward.x * playerRotateSpeed * Time.deltaTime;
         rotationAngles.x = -1 * CnInputManager.GetAxis("Vertical") * playerRotateSpeed * Time.deltaTime;
         cam.transform.Rotate(rotationAngles, Space.Self);
-        //igralec.transform.Rotate(rotationAngles, Space.Self);
+
+        //omejitev rotacije kamere gor-dol, maksimum je 35st
+        Debug.Log(cam.transform.localEulerAngles.x);
+        if (cam.transform.localEulerAngles.x < 325 && cam.transform.localEulerAngles.x > 180) {
+            cam.transform.Rotate(325 - cam.transform.localEulerAngles.x, 0, 0, Space.Self);
+        }
+        if (cam.transform.localEulerAngles.x > 35 && cam.transform.localEulerAngles.x < 180)
+        {
+            cam.transform.Rotate(35 - cam.transform.localEulerAngles.x, 0, 0, Space.Self);
+        }
     }
 }
