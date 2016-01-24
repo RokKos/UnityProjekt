@@ -1757,6 +1757,7 @@ GameObject:
   - 33: {fileID: 3394984}
   - 23: {fileID: 2306176}
   - 95: {fileID: 9564026}
+  - 64: {fileID: 6450432}
   m_Layer: 0
   m_Name: most2
   m_TagString: Untagged
@@ -9282,6 +9283,18 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 0
   m_Mesh: {fileID: 4300000, guid: bbe10c029aedd044f9d5f49c599090e0, type: 3}
+--- !u!64 &6450432
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 159850}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_Mesh: {fileID: 4300000, guid: ae2151cf59717704289fb7c8e37c23da, type: 3}
 --- !u!65 &6501120
 BoxCollider:
   m_ObjectHideFlags: 1
