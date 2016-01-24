@@ -6,10 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/main.unity
-  - enabled: 0
-    path: Assets/CNControls/Examples/Scenes/Third Person Controller.unity
-  - enabled: 0
-    path: Assets/CNControls/Examples/Scenes/Third Person Controller.unity
-  - enabled: 1
     path: Assets/borMain.unity
+  - enabled: 1
+    path: Assets/MainMenu.unity
+  - enabled: 1
+    path: Assets/main.unity

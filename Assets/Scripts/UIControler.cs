@@ -11,12 +11,16 @@ using UnityEngine.UI;
 
 public class UIControler : MonoBehaviour {
 
-	GameObject[] findGameObj;// = new List<string>(); 
+	GameObject[] findGameObj;// = new List<string>();
+	GameObject trenutniGameObject;
+	[SerializeField] GameObject contentCanvas;
+	[SerializeField] Image img;
 
 	// Use this for initialization
 	void Awake () {
 		findGameObj = GameObject.FindGameObjectsWithTag("Menu");
 		enableMenu("MainMenu");
+
 	}
 	
 	// Update is called once per frame
@@ -40,10 +44,40 @@ public class UIControler : MonoBehaviour {
 		foreach (GameObject elem in findGameObj) {
 			if(elem.name == nameOfMenu){
 				elem.SetActive(true);
+				//if(elem.name == "ShopMenu"){
+					//load all weapons from resources
+					//GameObject[] contentPrefabs =  Resources.LoadAll("Weapons") as GameObject[];
+					//Debug.Log(contentPrefabs.Length.ToString());
+					//go thru all of them
+					//foreach (GameObject tempPrefab in contentPrefabs){
+						//populate content menu
+					//	CreateButton(tempPrefab);
+					//}
+				//}
 			}else{
 				elem.SetActive(false);
 			}
 			
 		}
+	}
+	/// <summary>
+	/// Goes to Main level
+	/// </summary>
+	public void gotoMain(){
+		Application.LoadLevel("main");
+	}
+
+	public void changePicture(Button clickedButton){
+		Debug.Log("here");
+		Sprite tempSprite = clickedButton.GetComponent<Image>().sprite;
+		img.sprite = tempSprite;
+		img.color = new Color(1f, 1f, 1f, 1.0f);
+	}
+
+	void CreateButton(GameObject prefabButton){
+		GameObject insButton = Instantiate(prefabButton) as GameObject;
+		//set paretn to our canvas so that is perfectly lined with button
+		insButton.transform.SetParent(contentCanvas.transform, false);
+
 	}
 }

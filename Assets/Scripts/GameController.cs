@@ -122,4 +122,8 @@ public class GameController : MonoBehaviour {
 		} 
 
 	}
+
+	public void gotoMainMenu(){
+		Application.LoadLevel("MainMenu");
+	}
 }
