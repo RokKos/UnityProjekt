@@ -32,7 +32,10 @@ public class GameController : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake() {
+
 		//igralec.transform.position = new Vector3(10.0f, 10.0f, 10.0f);
+		//initial settings
+		Time.timeScale = 1.0f;
 		hud.SetActive(true);
 		pauseMenu.SetActive(false);
 		//get postion so that u can spawn objects

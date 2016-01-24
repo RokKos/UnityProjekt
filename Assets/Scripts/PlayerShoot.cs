@@ -13,6 +13,7 @@ public class PlayerShoot : MonoBehaviour {
 	private int damageShot = 20; //how much damage enemy take
 	private float timeRafal = 1.0f;
 	private float rangeOfBullet = 100.0f;
+	private float shootForce = 40.0f;//5000.0f;
 	private int scoreInt = 0;
 	float timer;  // A timer to determine when to fire.
     Ray shootRay;  // A ray from the gun end forwards.
@@ -20,6 +21,7 @@ public class PlayerShoot : MonoBehaviour {
     int shootableMask;// A layer mask so the raycast only hits things on the shootable layer.
     [SerializeField] GameObject scoreText;
     [SerializeField] SpawningEnemije spawningEnemije;
+    [SerializeField] GameObject puscica;
 	
 	// Use this for initialization
 	void Start () {
@@ -41,6 +43,9 @@ public class PlayerShoot : MonoBehaviour {
 
 	public void Shoot(){
         Debug.Log("strelam!");
+        GameObject projectile = Instantiate(puscica, transform.position + transform.forward * 3.0f, transform.rotation) as GameObject;
+        projectile.GetComponent<Rigidbody>().velocity = (projectile.transform.forward * shootForce);
+
 		//Set shoot ray origin and direction
 		shootRay.origin = transform.position;
 		shootRay.direction = transform.forward;

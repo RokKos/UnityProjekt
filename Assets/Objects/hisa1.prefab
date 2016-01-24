@@ -213,6 +213,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 427964}
   - 95: {fileID: 9564822}
+  - 65: {fileID: 6505826}
   m_Layer: 0
   m_Name: hisa1
   m_TagString: Hisa
@@ -857,7 +858,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 142876}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.1000004, y: 0, z: 21.3299999}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children:
   - {fileID: 478218}
@@ -2590,6 +2591,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 109902}
   m_Mesh: {fileID: 4300078, guid: ae1f862f5f43eb34bbc951d233735369, type: 3}
+--- !u!65 &6505826
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 142876}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .0549999997, y: .0799999982, z: .100000001}
+  m_Center: {x: 0, y: .0399999991, z: .00499999989}
 --- !u!95 &9564822
 Animator:
   serializedVersion: 3

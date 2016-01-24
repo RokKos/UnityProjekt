@@ -8,6 +8,7 @@ TagManager:
   - Menu
   - Smreka
   - Hisa
+  - Bor
   layers:
   - Default
   - TransparentFX
