@@ -30,7 +30,7 @@ public class EnemyControl: MonoBehaviour {
 	/// Attack player if in range
 	/// </summary>
 	void Update () {
-		agent.SetDestination(igralec.transform.position);
+		//agent.SetDestination(igralec.transform.position);
 		trenutniTime -= Time.deltaTime;
 		//check if player is in range and if not dead and if enoug time alapsed
 		if(uCanAttack && trenutniTime <= 0.0f && playerHealt.currHealth > 0 ){

@@ -24,7 +24,7 @@ public class MakeResources : MonoBehaviour {
             foreach (GameObject element in GetElements){
             	Vector3 tempVec = element.GetComponent<Transform>().position;
            		file.WriteLine(ParseVector3D(tempVec));
-           		Debug.Log(ParseVector3D(tempVec));
+           		//Debug.Log(ParseVector3D(tempVec));
             }
         }			
 	}

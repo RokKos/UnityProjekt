@@ -46,7 +46,7 @@ public class GameController : MonoBehaviour {
 	void Update () {
 
 		int indexMeja = playerHealt.currHealth/2-1;
-		Debug.Log((indexMeja).ToString());
+		//Debug.Log((indexMeja).ToString());
 		//change images to full life
 		for (int i = 0; i < indexMeja; ++i){
 			SrcekImages[i].sprite = lifeImages[2];

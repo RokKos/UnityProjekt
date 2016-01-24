@@ -6,7 +6,7 @@ public class PlayerRotate : MonoBehaviour {
     [SerializeField] GameObject igralec;
     [SerializeField] Camera cam;
     //kotna hitrost vrtenja igralca v stopinjah
-    private float playerRotateSpeed = 30.0f;
+    private float playerRotateSpeed = 35.0f;
 
     // Use this for initialization
     void Start () {
@@ -28,7 +28,7 @@ public class PlayerRotate : MonoBehaviour {
         cam.transform.Rotate(rotationAngles, Space.Self);
 
         //omejitev rotacije kamere gor-dol, maksimum je 35st
-        Debug.Log(cam.transform.localEulerAngles.x);
+        //Debug.Log(cam.transform.localEulerAngles.x);
         if (cam.transform.localEulerAngles.x < 325 && cam.transform.localEulerAngles.x > 180) {
             cam.transform.Rotate(325 - cam.transform.localEulerAngles.x, 0, 0, Space.Self);
         }
