@@ -43,12 +43,12 @@ public class PlayerShoot : MonoBehaviour {
 		//Set shoot ray origin and direction
 		shootRay.origin = transform.position;
 		shootRay.direction = transform.forward;
-		Debug.Log("Shoot");
+		//Debug.Log("Shoot");
 		//look if raykast hits anything
 		if(Physics.Raycast(shootRay, out targetHit, rangeOfBullet, shootableMask)){
-			Debug.Log("Hit");
+			//Debug.Log("Hit");
 			//Debug.Log(targetHit.transform);
-			Debug.DrawLine(shootRay.origin, targetHit.point);
+			//Debug.DrawLine(shootRay.origin, targetHit.point);
 			//call funtion taht kils enemie
 			targetHit.transform.GetComponent<EnemyControl>().KillEnemie();
 			//incresea score

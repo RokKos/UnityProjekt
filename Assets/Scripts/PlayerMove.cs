@@ -5,7 +5,8 @@ using System.Collections;
 public class PlayerMove : MonoBehaviour {
     [SerializeField] GameObject igralec;
     private float playerSpeed = 10.0f;
-    int x, y;
+    [SerializeField] Rigidbody rigitBody;
+    private int smer;
 
     // Use this for initialization
     void Start () {
@@ -13,10 +14,16 @@ public class PlayerMove : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        //premik igralca
-        Vector3 premik = igralec.transform.forward * CnInputManager.GetAxis("Vertical");
-        premik+=igralec.transform.right * CnInputManager.GetAxis("Horizontal");
-        igralec.transform.position = igralec.transform.position + premik;
-        if (CnInputManager.GetAxis("Vertical") != 0) Debug.Log("leva");
+        //if (smer==1) Debug.Log(smer);
+        //premik igralca naprej-nazaj
+        float newXcordinate = igralec.transform.forward.x * smer * playerSpeed * Time.deltaTime;
+        float newZcordinate = igralec.transform.forward.z * smer * playerSpeed * Time.deltaTime;
+        rigitBody.MovePosition(igralec.transform.position + new Vector3(newXcordinate, 0, newZcordinate));
+    }
+
+    public void premik(int sm){
+        //Debug.Log(smer);
+        //sm je 1-naprej, 0-stoj in -1-nazaj
+        smer = sm;
     }
 }

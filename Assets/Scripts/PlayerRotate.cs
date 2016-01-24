@@ -28,7 +28,7 @@ public class PlayerRotate : MonoBehaviour {
         cam.transform.Rotate(rotationAngles, Space.Self);
 
         //omejitev rotacije kamere gor-dol, maksimum je 35st
-        Debug.Log(cam.transform.localEulerAngles.x);
+        //Debug.Log(cam.transform.localEulerAngles.x);
         if (cam.transform.localEulerAngles.x < 325 && cam.transform.localEulerAngles.x > 180) {
             cam.transform.Rotate(325 - cam.transform.localEulerAngles.x, 0, 0, Space.Self);
         }
