@@ -14,6 +14,7 @@ public class EnemyControl: MonoBehaviour {
 	private float trenutniTime;
 	PlayerHealt playerHealt;
 	private bool uCanAttack = false;
+	AudioSource attackSound;
 
 	// Use this for initialization
 	void Awake () {
@@ -23,6 +24,7 @@ public class EnemyControl: MonoBehaviour {
 		igralec = GameObject.Find("Igralec");
 		playerHealt = igralec.GetComponent<PlayerHealt>();
 		trenutniTime = timeAttack;
+		attackSound = GetComponent<AudioSource>();
 	}
 	
 	/// <summary>
@@ -34,6 +36,7 @@ public class EnemyControl: MonoBehaviour {
 		trenutniTime -= Time.deltaTime;
 		//check if player is in range and if not dead and if enoug time alapsed
 		if(uCanAttack && trenutniTime <= 0.0f && playerHealt.currHealth > 0 ){
+			attackSound.Play();
 			playerHealt.TakeDamage(1);
 			trenutniTime = timeAttack;
 		}

@@ -22,11 +22,13 @@ public class PlayerShoot : MonoBehaviour {
     [SerializeField] GameObject scoreText;
     [SerializeField] SpawningEnemije spawningEnemije;
     [SerializeField] GameObject puscica;
+    AudioSource ShootSound;
 	
 	// Use this for initialization
 	void Start () {
 		shootableMask = LayerMask.GetMask("enemiesMask");
 		timer = timeRafal;
+		ShootSound = GetComponent<AudioSource>();
 	}
 	
 	/// <summary>
@@ -43,6 +45,7 @@ public class PlayerShoot : MonoBehaviour {
 
 	public void Shoot(){
         Debug.Log("strelam!");
+        ShootSound.Play();
         GameObject projectile = Instantiate(puscica, transform.position + transform.forward * 3.0f, transform.rotation) as GameObject;
         projectile.GetComponent<Rigidbody>().velocity = (projectile.transform.forward * shootForce);
 
