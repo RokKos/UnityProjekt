@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Spawn
   - Menu
+  - Smreka
   layers:
   - Default
   - TransparentFX

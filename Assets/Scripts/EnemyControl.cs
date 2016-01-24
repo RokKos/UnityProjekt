@@ -10,7 +10,8 @@ public class EnemyControl: MonoBehaviour {
 	NavMeshAgent agent;
 	GameObject igralec; //for postion of player
 	private float angleOfDeath = 180.0f; //for what angle enemie rotate when dies
-	private float timeAttack = 2.0f;
+	public float timeAttack = 2.0f;
+	private float trenutniTime;
 	PlayerHealt playerHealt;
 	private bool uCanAttack = false;
 
@@ -21,6 +22,7 @@ public class EnemyControl: MonoBehaviour {
 		//find player in scene
 		igralec = GameObject.Find("Igralec");
 		playerHealt = igralec.GetComponent<PlayerHealt>();
+		trenutniTime = timeAttack;
 	}
 	
 	/// <summary>
@@ -29,11 +31,11 @@ public class EnemyControl: MonoBehaviour {
 	/// </summary>
 	void Update () {
 		agent.SetDestination(igralec.transform.position);
-		timeAttack -= Time.deltaTime;
+		trenutniTime -= Time.deltaTime;
 		//check if player is in range and if not dead and if enoug time alapsed
-		if(uCanAttack && timeAttack <= 0.0f && playerHealt.currHealth > 0 ){
+		if(uCanAttack && trenutniTime <= 0.0f && playerHealt.currHealth > 0 ){
 			playerHealt.TakeDamage(1);
-			timeAttack = 2.0f;
+			trenutniTime = timeAttack;
 		}
 	}
 
