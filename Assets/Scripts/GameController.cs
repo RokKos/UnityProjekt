@@ -22,7 +22,11 @@ public class GameController : MonoBehaviour {
 	[SerializeField] GameObject pauseMenu; //for disabling and enabling
 	[SerializeField] MakeResources makeResources;
 	List<Vector3> listOfSmreka = new List<Vector3>(); //list of postion where to spawn
+	List<Vector3> listOfHisa = new List<Vector3>(); //list of postion where to spawn
+	List<Vector3> listOfBor = new List<Vector3>(); //list of postion where to spawn
 	[SerializeField] GameObject prefabSmreka;
+	[SerializeField] GameObject prefabHisa;
+	[SerializeField] GameObject prefabBor;
 	//complex dictionary for populating
 	Dictionary<string, KeyValuePair<List<Vector3>, GameObject> > pariForPopulation = new Dictionary<string, KeyValuePair<List<Vector3>, GameObject> >();
 
@@ -32,12 +36,14 @@ public class GameController : MonoBehaviour {
 		hud.SetActive(true);
 		pauseMenu.SetActive(false);
 		//get postion so that u can spawn objects
-		//makeResources.exportToFile("Smreka");
+		//makeResources.exportToFile("Bor");
 		listOfSmreka = makeResources.readFile("Smreka"); 
+		listOfHisa = makeResources.readFile("Hisa"); 
+		listOfBor = makeResources.readFile("Bor"); 
 		//adding pairs
 		pariForPopulation.Add("Smreka", new KeyValuePair<List<Vector3>, GameObject>(listOfSmreka, prefabSmreka));
-		//pariForPopulation.Add("Bor", new Tuple<List<Vector3>, GameObject>(listOfBor, prefabBor));
-		//pariForPopulation.Add("Hisa", new Tuple<List<Vector3>, GameObject>(listOfHisa, prefabHisa));
+		pariForPopulation.Add("Bor", new KeyValuePair<List<Vector3>, GameObject>(listOfBor, prefabBor));
+		pariForPopulation.Add("Hisa", new KeyValuePair<List<Vector3>, GameObject>(listOfHisa, prefabHisa));
 
 		//populate world
 		PopulateWorld();
