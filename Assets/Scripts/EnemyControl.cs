@@ -32,7 +32,7 @@ public class EnemyControl: MonoBehaviour {
 		timeAttack -= Time.deltaTime;
 		//check if player is in range and if not dead and if enoug time alapsed
 		if(uCanAttack && timeAttack <= 0.0f && playerHealt.currHealth > 0 ){
-			playerHealt.TakeDamage(20);
+			playerHealt.TakeDamage(1);
 			timeAttack = 2.0f;
 		}
 	}

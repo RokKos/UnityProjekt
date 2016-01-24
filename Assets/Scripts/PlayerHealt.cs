@@ -8,7 +8,7 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class PlayerHealt : MonoBehaviour {
-	private int startHealth = 100;
+	public int startHealth = 6;
 	public int currHealth;
 	[SerializeField] Image udarecImage;
 	private float flashSpeed = 1.0f;
