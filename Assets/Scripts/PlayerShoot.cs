@@ -39,7 +39,8 @@ public class PlayerShoot : MonoBehaviour {
 		scoreText.GetComponent<Text>().text ="SCORE: " + scoreInt.ToString();
 	}
 
-	void Shoot(){
+	public void Shoot(){
+        Debug.Log("strelam!");
 		//Set shoot ray origin and direction
 		shootRay.origin = transform.position;
 		shootRay.direction = transform.forward;

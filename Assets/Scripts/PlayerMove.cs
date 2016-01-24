@@ -4,7 +4,7 @@ using System.Collections;
 
 public class PlayerMove : MonoBehaviour {
     [SerializeField] GameObject igralec;
-    private float playerSpeed = 10.0f;
+    private float playerSpeed = 7.5f;
     [SerializeField] Rigidbody rigitBody;
     private int smer;
 

@@ -6,7 +6,7 @@ public class PlayerRotate : MonoBehaviour {
     [SerializeField] GameObject igralec;
     [SerializeField] Camera cam;
     //kotna hitrost vrtenja igralca v stopinjah
-    private float playerRotateSpeed = 30.0f;
+    private float playerRotateSpeed = 35.0f;
 
     // Use this for initialization
     void Start () {
